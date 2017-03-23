@@ -21,9 +21,7 @@ print  "<link href ='https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquer
       print "<script src ='https://code.jquery.com/jquery-1.10.2.js'></script>";
       print "<script src ='https://code.jquery.com/ui/1.10.4/jquery-ui.js'></script>";
 	  
-	  print "<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css'>";
-	  print "<script src='https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js'></script>";
-	  
+	  p
 	   
 	   print "<script LANGUAGE=\"Javascript\"> ";
 
@@ -51,9 +49,6 @@ print "<table> <tr><td colspan='2'>";
 print "<input type='button' name='ADD' value='ADD' id='ADD' onclick='return fnsubmit()'>";
 print "<input type=button value=CANCEL onclick='fnCancel()'>";
 print "</td><tr><td>DATE</td><td><input name=date id=date></td></tr>";
-print "<tr><td>TIME</td><td><input name=time id=time></td></tr><tr><td>DESC</td><td>";
-print "<input name=description id=description></td></tr></table></div>";
-print "<input type=button name=New value=New id=btnNew onclick='return loadNew()' >";
 
 # If the form was properly submitted, save the data
 if ($input{"ADD"} eq "ADD") {
@@ -62,9 +57,9 @@ if ($input{"ADD"} eq "ADD") {
 $query = "insert into appointments (date, time, description) values (".
                 "$input{date},".
                 " \"$input{time}\",".
-                " $input{description})";
-$db_handle -> do($query);
-$action = "Record saved - $query";
+                " $inputdescription})";
+$db_handle -> do(query);
+$action = "Record saved - query";
 
 # If the form has not been submitted, ask for data
 }  else {
